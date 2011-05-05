@@ -35,10 +35,53 @@ class Report
         end
       end
 
-      # pdf.table([["Name and Subject ID Number", "AMOUNT"], table_rows], :header => true, :column_widths => [450, 70]) do
-      #   style row(0), :style => :bold, :align => :center
-      #   style column(1), :align => :right
-      # end
+
+      pdf.move_down 16
+
+      pdf.text "Narrative", :style => :bold
+
+      pdf.move_down 14
+
+      pdf.text "This is where the narrative field will appear. 
+
+      Sample: Melanoma Research Manager, Sarah Hunt, requested the Clinical Trials Office (CTO) to provide consultation and guidance with the close-out visit process for one of the sites participating in the Multi-Center Trial, Protocol #06-056."
+
+
+      pdf.move_down 16
+
+      pdf.text "Recommendation", :style => :bold
+
+      pdf.move_down 14
+
+      pdf.text "This is where the recommendation field will appear. 
+      
+      Sample: Schedule close-out visit activities with site -- This site enrolled two participants who are both off study and have completed all related activities. THe site has been closed through their local IRB. The close-out visit activities have been discussed, verified, and all follow up has been reconciled the site can then be close through the DFCI IRB."
+
+
+      pdf.move_down 16
+
+      pdf.text "Follow-up", :style => :bold
+
+      pdf.move_down 14
+
+      pdf.text "This is where the follow-up field will appear. 
+
+      (More text here, relating to follow-up.)"
+      
+
+      pdf.move_down 50
+
+      pdf.text "Report prepared by:                                                              Date:", :style => :bold
+
+      pdf.move_down 14
+
+      pdf.text "___________________________________                           ______________"
+
+
+
+
+
+
     end
   end
 
