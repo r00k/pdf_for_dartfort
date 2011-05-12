@@ -24,69 +24,62 @@ class Report
       end
 
       pdf.move_down 12
-
       pdf.text "Regulatory Consultation Report", :align => :center, :font_size => 15, :style => :bold
 
       pdf.move_down 12
-
       pdf.font_size 9 do
-        pdf.table(table_rows, :column_widths => [100,440]) do
+        pdf.table(table_rows, :column_widths => [120,420]) do
           style column(0), :background_color => 'A7A7A7'
         end
       end
 
-
-      pdf.move_down 16
-
-      pdf.text "Narrative", :style => :bold
-
-      pdf.move_down 14
-
+      pdf.move_down 22
+      pdf.text "Summary of Services Requested", :style => :bold
+      pdf.move_down 8
       pdf.text "This is where the narrative field will appear. 
-
       Sample: Melanoma Research Manager, Sarah Hunt, requested the Clinical Trials Office (CTO) to provide consultation and guidance with the close-out visit process for one of the sites participating in the Multi-Center Trial, Protocol #06-056."
 
 
-      pdf.move_down 16
-
-      pdf.text "Recommendation", :style => :bold
-
-      pdf.move_down 14
-
-      pdf.text "This is where the recommendation field will appear. 
-      
-      Sample: Schedule close-out visit activities with site -- This site enrolled two participants who are both off study and have completed all related activities. THe site has been closed through their local IRB. The close-out visit activities have been discussed, verified, and all follow up has been reconciled the site can then be close through the DFCI IRB."
+      pdf.move_down 22
+      pdf.text "Summary of Service Activities", :style => :bold
+      pdf.move_down 8
+      pdf.text "This will be a listing of dates and descriptions of what was done on that date."
 
 
-      pdf.move_down 16
-
-      pdf.text "Follow-up", :style => :bold
-
-      pdf.move_down 14
-
-      pdf.text "This is where the follow-up field will appear. 
-
-      (More text here, relating to follow-up.)"
+      pdf.move_down 22
+      pdf.text "Recommended Follow-up", :style => :bold
+      pdf.move_down 8
+      pdf.text "Recommended follow-ups will appear here (free text)."
       
 
       pdf.move_down 50
-
       pdf.text "Report prepared by:                                                              Date:", :style => :bold
-
       pdf.move_down 14
-
       pdf.text "___________________________________                           ______________"
+      pdf.font_size 9
+      pdf.move_down 2
+      pdf.text "Name of person logged in."
+      pdf.move_down 2
+      pdf.text "Title of person logged in"
+      pdf.move_down 2
+      pdf.text "Clinical Trial Office"
+      pdf.move_down 2
+      pdf.text "Dana-Farber Cancer Institute"
 
 
-
-
-
-
+      pdf.font_size 12
+      pdf.move_down 30
+      pdf.text "Report approved by:                                                              Date:", :style => :bold
+      pdf.move_down 14
+      pdf.text "___________________________________                           ______________"
+      pdf.font_size 9
+      pdf.move_down 2
+      pdf.text "Print name: "
     end
   end
 
   def table_rows
-    [["Disease Group", "Melanoma Research Group"], ["Research Manager", "Sarah Hunt"], ["Meeting Dates", "4/5/11"], ["CTO Representatives", "Anne Daoust"], ["Subject", "DFCI Multi-Center Trial 06-056 / Site 'Close-Out' process"]]
+    [["Disease Group", "Melanoma Research Group"], ["Research Manager", "Sarah Hunt"], ["Date of Initial Request", "4/5/11"], ["Date Request Completed", "4/10/11"], ["CTO Staff Assigned", "Anne Daoust"], ["Description", "DFCI Multi-Center Trial 06-056 / Site 'Close-Out' process"]]
   end
 end
 
